@@ -6,40 +6,27 @@
          <a class="btn btn-success" href="/car/drop"
             onclick="return confirm('Are you sure to drop all car ?');">DROP</a>
       </th>
-       <tr>
+   </tr>
+    <tr>
          <th>Name</th>
          <th>Image</th>
-         <th>year</th>
-         <th>classify</th>
+         <th>Year</th>
+         <th>Classify</th>
          <th>Status</th>
-         
+        
       </tr>
-   </tr>
-   
-   {{#each cars}}
+   {{#each Cars}}
    <tr>
       <td>{{name}}</td>
-      <td>
-            <img src="{{image}}" width="100" height="100">
-         </td>
-      <td>{{year}}</td>
-       <td>
-            {{#equal classify true}}
-            <span style="color: red; font-weight: bold;">còn </span>
-            {{/equal}}
-            {{#equal classify false}}
-            <span style="color: blue; font-style: italic;">hết</span>
-            {{/equal}}
-         </td>
-         <td>{{status}}</td>
       <td>
          <a href="/car/detail/{{_id}}">
             <img src="{{image}}" width="100" height="100">
          </a>
       </td>
-     
+      <td>{{year}}</td>
+       <td>{{classify}}</td>
+     <td>{{status}}</td>
       <td>
-         <a class="btn btn-warning" href="/car/edit/{{_id}}">EDIT</a>
          <a class="btn btn-danger" href="/car/delete/{{_id}}">DELETE</a>
       </td>
    </tr>
